@@ -1,0 +1,147 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.book {
+    width: 90%;
+    height: 80vh;
+    max-height: 600px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    transition: transform 0.6s ease-in-out;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.page.active {
+    transform: translateX(0);
+}
+
+.page.previous {
+    transform: translateX(-100%);
+}
+
+.navigation {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.sp {
+    width: 100%;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.loca {
+    flex: 1;
+    background: #e9ecef;
+    width: 90%;
+}
+
+.history {
+    flex: 1;
+    background: #f8f9fa;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+button {
+    cursor: pointer;
+}
+
+.speaking {
+    text-align: center;
+    color: green;
+    display: none;
+}
+
+.message, .copy, .paste {
+    display: none;
+}
+
+.message {
+    text-align: center;
+    color: red;
+}
+
+.copy {
+    text-align: center;
+    color: blue;
+}
+
+.paste {
+    text-align: center;
+    color: purple;
+}
+
+.history ul {
+    padding: 0;
+    list-style: none;
+    max-height: 300px; /* Adjust this value as needed */
+    overflow-y: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+.history li {
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.history li:last-child {
+    border-bottom: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+@media (max-width: 768px) {
+    .sp {
+        flex-direction: column;
+    }
+
+    .loca, .history {
+        width: 100%;
+    }
+    .book{
+        width: 90%;
+    }
+}
